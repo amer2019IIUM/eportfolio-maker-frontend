@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+///JQuery Installation///
+var $ = require('jquery');
+window.jQuery = $;
+window.$ = $;
+///End Installation///
 
 
 ///Bootstrap Installation///
@@ -20,7 +25,7 @@ require('./assets/css/responsive.css');
 require('./assets/plugins/css/owl.css');
 require('./assets/plugins/css/animate.css');
 ///End of Global CSS style
- 
+
 
 
 
