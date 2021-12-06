@@ -1,14 +1,16 @@
 <template>
   <div id="app">
+    <nav-bar />
     <eportfolio-preview />
   </div>
 </template>
 
 <script>
 import EportfolioPreview from "./pages/EportfolioPreview.vue";
+import NavBar from "./components/layout/NavBar.vue";
 export default {
   name: "App",
-  components: { EportfolioPreview },
+  components: { EportfolioPreview, NavBar },
 };
 </script>
 

@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-///JQuery Installation///
-var $ = require('jquery');
-window.jQuery = $;
-window.$ = $;
-///End Installation///
 
 
 ///Bootstrap Installation///
@@ -21,19 +16,11 @@ Vue.use(IconsPlugin)
 ///Global CSS style
 require('./assets/css/styles.css');
 require('./assets/css/responsive.css');
-require('./assets/plugins/css/jquery.fancybox.min.css');
+// require('./assets/plugins/css/jquery.fancybox.min.css');
 require('./assets/plugins/css/owl.css');
 require('./assets/plugins/css/animate.css');
 ///End of Global CSS style
-
-
-// require('./assets/js/custom-scripts.js');
-// require('./assets/plugins/js/jquery.nav.js');
-// require('./assets/plugins/js/jquery.mixitup.min.js');
-// require('./assets/plugins/js/jquery.fancybox.min.js');
-// require('./assets/plugins/js/popper.min.js');
-// require('./assets/plugins/js/owl.carousel.js');
-
+ 
 
 
 
