@@ -89,7 +89,7 @@
               data-wow-delay="0.6s"
             >
               <div class="img-border">
-                <img src="assets/images/hero.png" alt="" class="img-fluid" />
+                <img :src="SimpleImg" alt="" class="img-fluid" />
               </div>
             </div>
           </div>
@@ -98,3 +98,12 @@
     </div>
   </section>
 </template>
+
+<script>
+import SimpleImg from "../../assets/images/hero.png";
+export default {
+  data() {
+    return { SimpleImg };
+  },
+};
+</script>

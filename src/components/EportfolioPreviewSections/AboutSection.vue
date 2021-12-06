@@ -14,7 +14,7 @@
               data-wow-duration="0.8s"
               data-wow-delay="0.4s"
             >
-              <img src="assets/images/ab-img.png" alt="" class="img-fluid" />
+              <img :src="SimpleImg" alt="" class="img-fluid" />
             </div>
           </div>
           <div class="col-sm-12 col-md-6">
@@ -128,3 +128,11 @@
     </section>
   </div>
 </template>
+<script>
+import SimpleImg from "../../assets/images/ab-img.png";
+export default {
+  data() {
+    return { SimpleImg };
+  },
+};
+</script>

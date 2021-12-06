@@ -71,7 +71,7 @@
                   class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
                 >
                   <figure>
-                    <img src="assets/images/portfolio/g1.jpg" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
@@ -82,16 +82,12 @@
                 </div>
                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui mockup">
                   <figure>
-                    <img src="assets/images/portfolio/g2.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
                       <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g2.png"
-                        data-fancybox
-                        data-src="#mh"
-                      ></a>
+                      <a :href="Img1" data-fancybox data-src="#mh"></a>
                     </figcaption>
                   </figure>
                 </div>
@@ -99,31 +95,23 @@
                   class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
                 >
                   <figure>
-                    <img src="assets/images/portfolio/g3.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
                       <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g3.png"
-                        data-fancybox
-                        data-src="#mh"
-                      ></a>
+                      <a :src="Img1" data-fancybox data-src="#mh"></a>
                     </figcaption>
                   </figure>
                 </div>
                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
                   <figure>
-                    <img src="assets/images/portfolio/g5.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
                       <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g5.png"
-                        data-fancybox
-                        data-src="#mh"
-                      ></a>
+                      <a :src="Img1" data-fancybox data-src="#mh"></a>
                     </figcaption>
                   </figure>
                 </div>
@@ -131,7 +119,7 @@
                   class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
                 >
                   <figure>
-                    <img src="assets/images/portfolio/g4.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
@@ -146,7 +134,7 @@
                 </div>
                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
                   <figure>
-                    <img src="assets/images/portfolio/g6.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
@@ -161,7 +149,7 @@
                 </div>
                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
                   <figure>
-                    <img src="assets/images/portfolio/g8.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
@@ -176,7 +164,7 @@
                 </div>
                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui">
                   <figure>
-                    <img src="assets/images/portfolio/g9.png" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
@@ -191,7 +179,7 @@
                 </div>
                 <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
                   <figure>
-                    <img src="assets/images/portfolio/g7.jpg" alt="img04" />
+                    <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
                       <h5 class="title">Creative Design</h5>
@@ -265,3 +253,14 @@
     </section>
   </div>
 </template>
+<script>
+import Img1 from "../../assets/images/portfolio/g1.jpg";
+
+export default {
+  data() {
+    return {
+      Img1,
+    };
+  },
+};
+</script>
