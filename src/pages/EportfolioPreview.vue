@@ -19,18 +19,8 @@
       <home-section />
       <about-section />
       <skill-section />
-
-      <section class="mh-experince" id="mh-experience">
-        <div class="bolor-overlay">
-          <div class="container">
-            <div class="row section-separator">
-              <education-section />
-              <experience-section />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <education-section />
+      <experience-section />
       <project-section />
       <extra-section />
     </div>
@@ -72,7 +62,7 @@ export default {
       loadingKey: "loadingReport",
 
       update(data) {
-        console.log(data)
+        console.log(data);
         return data;
       },
     },

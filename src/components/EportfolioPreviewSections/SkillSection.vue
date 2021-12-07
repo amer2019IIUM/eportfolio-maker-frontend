@@ -178,7 +178,7 @@
 }
 .circle-wrap .circle .mask .fill {
   clip: rect(0px, 75px, 150px, 0px);
-  background-color: #61dfcb;
+  background-color: #39d7be;
 }
 .circle-wrap .circle .mask.full,
 .circle-wrap .circle .fill {
