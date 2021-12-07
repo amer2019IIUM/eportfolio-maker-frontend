@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 
 ///JQuery Installation///
-var $ = require('jquery');
-window.jQuery = $;
-window.$ = $;
+// var $ = require('jquery');
+// window.jQuery = $;
+// window.$ = $;
 ///End Installation///
 
 
@@ -13,6 +13,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 Vue.config.productionTip = false
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { createProvider } from './vue-apollo'
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 ///End of Bootstrap Installation///
@@ -31,5 +32,6 @@ require('./assets/plugins/css/animate.css');
 
 
 new Vue({
-  render: h => h(App),
+  apolloProvider: createProvider(),
+  render: h => h(App)
 }).$mount('#app')

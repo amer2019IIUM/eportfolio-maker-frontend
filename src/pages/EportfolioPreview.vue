@@ -45,6 +45,7 @@ import ExtraSection from "../components/EportfolioPreviewSections/ExtraSection.v
 import HomeSection from "../components/EportfolioPreviewSections/HomeSection.vue";
 import ProjectSection from "../components/EportfolioPreviewSections/ProjectSection.vue";
 import SkillSection from "../components/EportfolioPreviewSections/SkillSection.vue";
+import Testing from "../graphql/HelloWorld.gql";
 export default {
   components: {
     HomeSection,
@@ -54,6 +55,27 @@ export default {
     ExperienceSection,
     ProjectSection,
     ExtraSection,
+  },
+  data() {
+    return {
+      isBody: false,
+      body: "",
+      nameState: null,
+      submittedNames: [],
+      loadingReport: 0,
+      reportContents: null,
+    };
+  },
+  apollo: {
+    reportContents: {
+      query: Testing,
+      loadingKey: "loadingReport",
+
+      update(data) {
+        console.log(data)
+        return data;
+      },
+    },
   },
 };
 </script>
