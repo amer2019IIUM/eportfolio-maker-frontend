@@ -13,53 +13,9 @@
             data-wow-duration="0.8s"
             data-wow-delay="0.1s"
           >
-            <h3>Recent Portfolio</h3>
+            <h3>Recent Projects</h3>
           </div>
           <div class="part col-sm-12">
-            <div class="portfolio-nav col-sm-12" id="filter-button">
-              <ul>
-                <li
-                  data-filter="*"
-                  class="current wow fadeInUp"
-                  data-wow-duration="0.8s"
-                  data-wow-delay="0.1s"
-                >
-                  <span>All Categories</span>
-                </li>
-                <li
-                  data-filter=".user-interface"
-                  class="wow fadeInUp"
-                  data-wow-duration="0.8s"
-                  data-wow-delay="0.2s"
-                >
-                  <span>Web Design</span>
-                </li>
-                <li
-                  data-filter=".branding"
-                  class="wow fadeInUp"
-                  data-wow-duration="0.8s"
-                  data-wow-delay="0.3s"
-                >
-                  <span>Branding</span>
-                </li>
-                <li
-                  data-filter=".mockup"
-                  class="wow fadeInUp"
-                  data-wow-duration="0.8s"
-                  data-wow-delay="0.4s"
-                >
-                  <span>Mockups</span>
-                </li>
-                <li
-                  data-filter=".ui"
-                  class="wow fadeInUp"
-                  data-wow-duration="0.8s"
-                  data-wow-delay="0.5s"
-                >
-                  <span>Photography</span>
-                </li>
-              </ul>
-            </div>
             <div
               class="mh-project-gallery col-sm-12 wow fadeInUp"
               id="project-gallery"
@@ -69,54 +25,8 @@
               <div class="portfolioContainer row">
                 <div
                   class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
-                >
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a data-fancybox data-src="#mh"></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui mockup">
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a :href="Img1" data-fancybox data-src="#mh"></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div
-                  class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
-                >
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a :src="Img1" data-fancybox data-src="#mh"></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a :src="Img1" data-fancybox data-src="#mh"></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div
-                  class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
+                  v-for="(product, pIndex) in toBeShown"
+                  :key="pIndex"
                 >
                   <figure>
                     <img :src="Img1" alt="img04" />
@@ -125,72 +35,39 @@
                       <h5 class="title">Creative Design</h5>
                       <span class="sub-title">Photograpy</span>
                       <a
-                        href="assets/images/portfolio/g4.png"
                         data-fancybox
                         data-src="#mh"
+                        v-b-modal="`modal-${pIndex}`"
                       ></a>
                     </figcaption>
                   </figure>
+
+                  <div>
+                    <b-modal
+                      :id="`modal-${pIndex}`"
+                      size="lg"
+                      title="Large Modal"
+                    >
+                      Hello Large Modal!
+                    </b-modal>
+                  </div>
                 </div>
-                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g6.png"
-                        data-fancybox
-                        data-src="#mh"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g8.png"
-                        data-fancybox
-                        data-src="#mh"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui">
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g9.png"
-                        data-fancybox
-                        data-src="#mh"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
-                <div class="grid-item col-md-4 col-sm-6 col-xs-12 branding">
-                  <figure>
-                    <img :src="Img1" alt="img04" />
-                    <figcaption class="fig-caption">
-                      <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
-                      <a
-                        href="assets/images/portfolio/g7.jpg"
-                        data-fancybox="gallery"
-                      ></a>
-                    </figcaption>
-                  </figure>
-                </div>
+              </div>
+              <div>
+                <!-- <button
+                  class="btn btn-fill btn-block"
+                  @click="prevPage"
+                  :disabled="currentPage == 1"
+                >
+                  Show Less
+                </button> -->
+                <button
+                  @click="nextPage"
+                  class="btn btn-fill btn-block"
+                  :disabled="currentPage == totalPages"
+                >
+                  Show More
+                </button>
               </div>
               <!-- End: .grid .project-gallery -->
             </div>
@@ -260,7 +137,108 @@ export default {
   data() {
     return {
       Img1,
+      products: [
+        {
+          name: "a",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "b",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "c",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "d",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "e",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "f",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "g",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "h",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "i",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "j",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "k",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "l",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "m",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "n",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "o",
+          category: "a",
+          price: "82.75",
+        },
+        {
+          name: "p",
+          category: "a",
+          price: "82.75",
+        },
+      ],
+      currentPage: 1,
     };
+  },
+  methods: {
+    nextPage() {
+      if (this.currentPage < this.totalPages) this.currentPage++;
+    },
+    prevPage() {
+      this.currentPage = this.currentPage - 1 || 1;
+    },
+  },
+  computed: {
+    toBeShown() {
+      return this.products.slice(0, this.currentPage * 4);
+    },
+    totalPages() {
+      return Math.ceil(this.products.length / 4);
+    },
   },
 };
 </script>
+
+<style scoped></style>

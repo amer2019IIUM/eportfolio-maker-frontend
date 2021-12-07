@@ -21,6 +21,7 @@ Vue.use(IconsPlugin)
 ///Global CSS style
 require('./assets/css/styles.css');
 require('./assets/css/responsive.css');
+require('./assets/icons/font-awesome-4.7.0/css/font-awesome.min.css');
 // require('./assets/plugins/css/jquery.fancybox.min.css');
 require('./assets/plugins/css/owl.css');
 require('./assets/plugins/css/animate.css');

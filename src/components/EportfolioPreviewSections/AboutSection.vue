@@ -50,13 +50,10 @@
                   <li><span>Javascript</span></li>
                 </ul>
               </div>
-              <a
-                href=""
-                class="btn btn-fill wow fadeInUp"
-                data-wow-duration="0.8s"
-                data-wow-delay="0.4s"
-                >Downlaod CV <i class="fa fa-download"></i
-              ></a>
+              <a href="" class="btn btn-fill wow fadeInUp">
+                Downlaod CV
+                <i class="fa fa-download"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -68,7 +65,7 @@
            SERVICE
         ===================
         -->
-    <section class="mh-service">
+    <!-- <section class="mh-service">
       <div class="container">
         <div class="row section-separator">
           <div
@@ -125,7 +122,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 <script>
