@@ -18,59 +18,22 @@
               data-wow-delay="0.3s"
             >
               <h3>Technical Skills</h3>
-              <div class="each-skills">
-                <div class="candidatos">
+              <div
+                class="each-skills"
+                v-for="(item, index) in userSkill"
+                :key="index"
+              >
+                <div class="candidatos" v-if="item.type == 'technical'">
                   <div class="parcial">
                     <div class="info">
-                      <div class="nome">Javascript</div>
-                      <div class="percentagem-num">86%</div>
+                      <div class="nome">{{ item.title }}</div>
+                      <div class="percentagem-num">{{ item.percentage }}%</div>
                     </div>
                     <div class="progressBar">
-                      <div class="percentagem" style="width: 86%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">Java</div>
-                      <div class="percentagem-num">46%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 46%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">Python</div>
-                      <div class="percentagem-num">38%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 38%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">PHP</div>
-                      <div class="percentagem-num">17%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 17%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">PHP</div>
-                      <div class="percentagem-num">17%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 17%"></div>
+                      <div
+                        class="percentagem"
+                        v-bind:style="'width:' + item.percentage + '%'"
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -86,70 +49,24 @@
           >
             <h3>Professional Skills</h3>
             <ul class="mh-professional-progress">
-              <li>
-                <div class="circle-wrap">
-                  <div class="circle">
-                    <div class="mask full">
-                      <div class="fill" style="transform: rotate(300deg)"></div>
-                    </div>
+              <span v-for="(item, index) in userSkill" :key="index">
+                <li v-if="item.type == 'professional'">
+                  <div class="circle-wrap">
+                    <div class="circle">
+                      <div class="mask full">
+                        <div class="fill"></div>
+                      </div>
 
-                    <div class="mask half">
-                      <div class="fill"></div>
-                    </div>
+                      <div class="mask half">
+                        <div class="fill"></div>
+                      </div>
 
-                    <div class="inside-circle">70%</div>
+                      <div class="inside-circle">{{ item.percentage }}%</div>
+                    </div>
                   </div>
-                </div>
-                <div class="pr-skill-name">Communication</div>
-              </li>
-              <li>
-                <div class="circle-wrap">
-                  <div class="circle">
-                    <div class="mask full">
-                      <div class="fill" style="transform: rotate(250deg)"></div>
-                    </div>
-
-                    <div class="mask half">
-                      <div class="fill"></div>
-                    </div>
-
-                    <div class="inside-circle">30%</div>
-                  </div>
-                </div>
-                <div class="pr-skill-name">Team Work</div>
-              </li>
-              <li>
-                <div class="circle-wrap">
-                  <div class="circle">
-                    <div class="mask full">
-                      <div class="fill" style="transform: rotate(150deg)"></div>
-                    </div>
-
-                    <div class="mask half">
-                      <div class="fill"></div>
-                    </div>
-
-                    <div class="inside-circle">20%</div>
-                  </div>
-                </div>
-                <div class="pr-skill-name">Project Management</div>
-              </li>
-              <li>
-                <div class="circle-wrap">
-                  <div class="circle">
-                    <div class="mask full">
-                      <div class="fill" style="transform: rotate(126deg)"></div>
-                    </div>
-
-                    <div class="mask half">
-                      <div class="fill"></div>
-                    </div>
-
-                    <div class="inside-circle">60%</div>
-                  </div>
-                </div>
-                <div class="pr-skill-name">Creativity</div>
-              </li>
+                  <div class="pr-skill-name">{{ item.title }}</div>
+                </li>
+              </span>
             </ul>
           </div>
         </div>
@@ -157,7 +74,21 @@
     </div>
   </section>
 </template>
-
+<script>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      // your data
+    };
+  },
+  computed: {
+    ...mapGetters({
+      userSkill: "Skill/userSkill",
+    }),
+  },
+};
+</script>
 <style scoped>
 .circle-wrap {
   margin: 10px auto;

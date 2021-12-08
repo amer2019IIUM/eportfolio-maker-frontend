@@ -30,7 +30,8 @@ query {
         source_code
         icon
         last_update
-        hidden
+        hidden_resume
+        hidden_portfolio
         technologies {
           id
           title
@@ -50,7 +51,8 @@ query {
         school
         country
         city
-        hidden
+        hidden_resume
+        hidden_portfolio
       }
     }
     experiences {
@@ -64,6 +66,8 @@ query {
         core_duties
         location
         further_details
+        hidden_resume
+        hidden_portfolio
       }
     }
     skills {
@@ -71,8 +75,11 @@ query {
         id
         title
         lang
+        percentage
         type
         sort
+        hidden_resume
+        hidden_portfolio
       }
     }
     interests {
@@ -81,6 +88,8 @@ query {
         lang
         title
         sort
+        hidden_resume
+        hidden_portfolio
       }
     }
   }

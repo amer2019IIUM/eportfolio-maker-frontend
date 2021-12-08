@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       loadingQueries: 0,
+      allUserDetails: null,
     };
   },
   methods: {

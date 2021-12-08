@@ -38,11 +38,13 @@
                 data-wow-duration="0.8s"
                 data-wow-delay="0.3s"
               >
-                <ul v-for="(item, index) in userSkill" :key="index">
+                <!-- <ul>
                   <li>
-                    <span>{{ item.title }}</span>
+                    <span v-for="(item, index) in userSkill" :key="index">
+                      {{ item.title }}</span
+                    >
                   </li>
-                </ul>
+                </ul> -->
               </div>
               <a href="" class="btn btn-fill wow fadeInUp">
                 Downlaod CV
@@ -129,7 +131,6 @@ export default {
   computed: {
     ...mapGetters({
       profile: "Profile/userProfile",
-      userSkill: "Skill/userSkill",
     }),
   },
 };
