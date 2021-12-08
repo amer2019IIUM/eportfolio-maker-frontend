@@ -51,20 +51,23 @@
             <ul class="mh-professional-progress">
               <span v-for="(item, index) in userSkill" :key="index">
                 <li v-if="item.type == 'professional'">
-                  <div class="circle-wrap">
-                    <div class="circle">
-                      <div class="mask full">
-                        <div class="fill"></div>
-                      </div>
-
-                      <div class="mask half">
-                        <div class="fill"></div>
-                      </div>
-
-                      <div class="inside-circle">{{ item.percentage }}%</div>
-                    </div>
-                  </div>
-                  <div class="pr-skill-name">{{ item.title }}</div>
+                  <vue-ellipse-progress
+                    :progress="item.percentage"
+                    color="#39d7be"
+                    emptyColor="#8c8c8c"
+                    animation="reverse 700 400"
+                    fontColor="black"
+                    :thickness="5"
+                    emptyThickness="5%"
+                    :legend="true"
+                    fontSize="2rem"
+                    :gap="10"
+                    dot="10 #39d7be"
+                    reverse
+                  >
+                    <span slot="legend-value">%</span>
+                    <p slot="legend-caption">{{ item.title }}</p>
+                  </vue-ellipse-progress>
                 </li>
               </span>
             </ul>

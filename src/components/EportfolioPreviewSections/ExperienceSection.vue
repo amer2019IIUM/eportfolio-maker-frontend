@@ -15,9 +15,9 @@
     <div class="container">
       <div class="timeline">
         <ul>
-          <li v-for="(item, index) in [1, 2, 3, 4]" :key="index">
+          <li v-for="(item, index) in userExperience" :key="index">
             <div class="timeline-content">
-              <h3 class="date">20th may, 2010</h3>
+              <h3 class="date">{{ item.to }}</h3>
               <div
                 class="mh-project-gallery"
                 id="project-gallery"
@@ -26,10 +26,9 @@
               >
                 <div class="grid-item user-interface">
                   <figure>
-                    <h1>Heading 2</h1>
+                    <h1>{{ item.job_title }}</h1>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Consectetur.....
+                      {{ item.further_details }}
                     </p>
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
@@ -60,11 +59,18 @@
 </template>
 <script>
 import Img1 from "../../assets/images/portfolio/g1.jpg";
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
       Img1,
     };
+  },
+  computed: {
+    ...mapGetters({
+      userExperience: "Experience/userExperience",
+    }),
   },
 };
 </script>

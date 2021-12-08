@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
+///cricle progress component
+// https://github.com/setaman/vue-ellipse-progress
+import VueEllipseProgress from 'vue-ellipse-progress';
+Vue.use(VueEllipseProgress);
+
 ///JQuery Installation///
 // var $ = require('jquery');
 // window.jQuery = $;

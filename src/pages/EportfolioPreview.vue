@@ -9,7 +9,7 @@
         <education-section />
         <experience-section />
         <project-section />
-        <extra-section />
+        <!-- <extra-section /> -->
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@ export default {
     EducationSection,
     ExperienceSection,
     ProjectSection,
-    ExtraSection,
+    // ExtraSection,
   },
   data() {
     return {

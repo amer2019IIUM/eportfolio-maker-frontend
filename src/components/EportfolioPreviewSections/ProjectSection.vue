@@ -25,15 +25,15 @@
               <div class="portfolioContainer row">
                 <div
                   class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
-                  v-for="(product, pIndex) in toBeShown"
+                  v-for="(item, pIndex) in toBeShown"
                   :key="pIndex"
                 >
                   <figure>
                     <img :src="Img1" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
-                      <h5 class="title">Creative Design</h5>
-                      <span class="sub-title">Photograpy</span>
+                      <h5 class="title">{{ item.title }}</h5>
+                      <span class="sub-title"> {{ item.desc }}</span>
                       <a
                         data-fancybox
                         data-src="#mh"
@@ -132,93 +132,12 @@
 </template>
 <script>
 import Img1 from "../../assets/images/portfolio/g1.jpg";
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
       Img1,
-      products: [
-        {
-          name: "a",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "b",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "c",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "d",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "e",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "f",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "g",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "h",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "i",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "j",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "k",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "l",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "m",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "n",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "o",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "p",
-          category: "a",
-          price: "82.75",
-        },
-      ],
       currentPage: 1,
     };
   },
@@ -231,11 +150,14 @@ export default {
     },
   },
   computed: {
+    ...mapGetters({
+      userProject: "Project/userProject",
+    }),
     toBeShown() {
-      return this.products.slice(0, this.currentPage * 4);
+      return this.userProject.slice(0, this.currentPage * 4);
     },
     totalPages() {
-      return Math.ceil(this.products.length / 4);
+      return Math.ceil(this.userProject.length / 4);
     },
   },
 };
