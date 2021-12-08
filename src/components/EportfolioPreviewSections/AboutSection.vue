@@ -31,23 +31,17 @@
                 data-wow-duration="0.8s"
                 data-wow-delay="0.2s"
               >
-                Hello, I’m a Patrick, web-developer based on Paris. I have rich
-                experience in web site design & building and customization. Also
-                I am good at
+                {{ profile.summary }}
               </p>
               <div
                 class="mh-about-tag wow fadeInUp"
                 data-wow-duration="0.8s"
                 data-wow-delay="0.3s"
               >
-                <ul>
-                  <li><span>php</span></li>
-                  <li><span>html</span></li>
-                  <li><span>css</span></li>
-                  <li><span>php</span></li>
-                  <li><span>wordpress</span></li>
-                  <li><span>React</span></li>
-                  <li><span>Javascript</span></li>
+                <ul v-for="(item, index) in userSkill" :key="index">
+                  <li>
+                    <span>{{ item.title }}</span>
+                  </li>
                 </ul>
               </div>
               <a href="" class="btn btn-fill wow fadeInUp">
@@ -126,10 +120,17 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 import SimpleImg from "../../assets/images/ab-img.png";
 export default {
   data() {
     return { SimpleImg };
+  },
+  computed: {
+    ...mapGetters({
+      profile: "Profile/userProfile",
+      userSkill: "Skill/userSkill",
+    }),
   },
 };
 </script>

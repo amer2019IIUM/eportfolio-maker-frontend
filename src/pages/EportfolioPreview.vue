@@ -1,28 +1,16 @@
 <template>
   <div>
-    <div class="white-vertion black-bg">
-      <!-- Start Loader -->
-      <!-- <div class="section-loader">
-        <div class="loader">
-          <div></div>
-          <div></div>
-        </div>
-      </div> -->
-      <!-- End Loader -->
-
-      <!--
-        ===================
-           NAVIGATION
-        ===================
-        -->
-
-      <home-section />
-      <about-section />
-      <skill-section />
-      <education-section />
-      <experience-section />
-      <project-section />
-      <extra-section />
+    <div v-if="loadingQueries"></div>
+    <div v-else>
+      <div class="white-vertion black-bg">
+        <home-section />
+        <about-section />
+        <skill-section />
+        <education-section />
+        <experience-section />
+        <project-section />
+        <extra-section />
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +23,8 @@ import ExtraSection from "../components/EportfolioPreviewSections/ExtraSection.v
 import HomeSection from "../components/EportfolioPreviewSections/HomeSection.vue";
 import ProjectSection from "../components/EportfolioPreviewSections/ProjectSection.vue";
 import SkillSection from "../components/EportfolioPreviewSections/SkillSection.vue";
-import Testing from "../graphql/HelloWorld.gql";
+import UserPortfolio from "../graphql/queries/single_query/allUserDetails.gql";
+import { mapActions } from "vuex";
 export default {
   components: {
     HomeSection,
@@ -48,21 +37,37 @@ export default {
   },
   data() {
     return {
-      isBody: false,
-      body: "",
-      nameState: null,
-      submittedNames: [],
-      loadingReport: 0,
-      reportContents: null,
+      loadingQueries: 0,
     };
   },
+  methods: {
+    ...mapActions({
+      UserProfile: "Profile/getUserProfile",
+      UserProject: "Project/getUserProject",
+      UserInterest: "Interest/getUserInterest",
+      UserExperience: "Experience/getUserExperience",
+      UserEducation: "Education/getUserEducation",
+      UserSkill: "Skill/getUserSkill",
+      UserDetails: "User/getUserDetails",
+      // ProjectTechnology: "Technology/getProjectTechnology",
+    }),
+  },
   apollo: {
-    reportContents: {
-      query: Testing,
-      loadingKey: "loadingReport",
+    allUserDetails: {
+      query: UserPortfolio,
+      loadingKey: "loadingQueries",
 
       update(data) {
-        console.log(data);
+        if (data.user.profiles.data == null) {
+          return this.UserProfile(null);
+        }
+        this.UserProfile(data.user.profiles.data[0]);
+        this.UserProject(data.user.projects.data);
+        this.UserInterest(data.user.interests.data);
+        this.UserExperience(data.user.experiences.data);
+        this.UserEducation(data.user.educations.data);
+        this.UserSkill(data.user.skills.data);
+        this.UserDetails(data.user);
         return data;
       },
     },

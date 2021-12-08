@@ -23,18 +23,20 @@
                     <div class="portfolioContainer row">
                       <div
                         class="grid-item col-lg-4 col-md-4 col-sm-6 col-xs-12 colorItem"
-                        v-for="(product, pIndex) in toBeShown"
-                        :key="pIndex"
+                        v-for="(item, index) in userEducation"
+                        :key="index"
                       >
                         <figure>
                           <div class="mh-education-deatils">
                             <!-- Education Institutes-->
                             <div class="mh-education-item">
                               <h4>
-                                Art & Multimedia From
-                                <a href="">Oxford University</a>
+                                {{ item.degree }}
+                                <a href="">{{ item.school }}</a>
                               </h4>
-                              <div class="mh-eduyear">2005-2008</div>
+                              <div class="mh-eduyear">
+                                {{ item.from }}-{{ item.to }}
+                              </div>
                               <p>
                                 It is a long established fact that a reader will
                                 be distracted by the readable content of a page
@@ -119,111 +121,19 @@
 </template>
 <script>
 import Img1 from "../../assets/images/portfolio/g1.jpg";
+import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
       Img1,
-      products: [
-        {
-          name: "a",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "b",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "c",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "d",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "e",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "f",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "g",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "h",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "i",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "j",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "k",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "l",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "m",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "n",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "o",
-          category: "a",
-          price: "82.75",
-        },
-        {
-          name: "p",
-          category: "a",
-          price: "82.75",
-        },
-      ],
-      currentPage: 1,
     };
   },
-  methods: {
-    nextPage() {
-      if (this.currentPage < this.totalPages) this.currentPage++;
-    },
-    prevPage() {
-      this.currentPage = this.currentPage - 1 || 1;
-    },
-  },
+
   computed: {
-    toBeShown() {
-      return this.products.slice(0, this.currentPage * 4);
-    },
-    totalPages() {
-      return Math.ceil(this.products.length / 4);
-    },
+    ...mapGetters({
+      userEducation: "Education/userEducation",
+    }),
   },
 };
 </script>

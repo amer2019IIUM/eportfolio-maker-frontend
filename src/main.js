@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import store from './store'
 
 ///JQuery Installation///
 // var $ = require('jquery');
@@ -29,9 +30,8 @@ require('./assets/plugins/css/animate.css');
 ///End of Global CSS style
 
 
-
-
 new Vue({
+  store,
   apolloProvider: createProvider(),
   render: h => h(App)
 }).$mount('#app')
