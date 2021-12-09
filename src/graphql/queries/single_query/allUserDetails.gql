@@ -18,6 +18,13 @@ query {
         city
         nationality
         headline
+        attachments {
+          id
+          title
+          link
+          attachable_id
+          attachable_type
+        }
       }
     }
     projects {
@@ -32,6 +39,13 @@ query {
         last_update
         hidden_resume
         hidden_portfolio
+        attachments {
+          id
+          title
+          link
+          attachable_id
+          attachable_type
+        }
         technologies {
           id
           title

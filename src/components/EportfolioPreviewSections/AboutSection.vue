@@ -5,7 +5,7 @@
             ABOUT
         =================
         -->
-    <section class="mh-about" id="mh-about">
+    <section class="mh-about secondSectionColor" id="mh-about">
       <div class="container">
         <div class="row section-separator">
           <div class="col-sm-12 col-md-6">
@@ -14,7 +14,11 @@
               data-wow-duration="0.8s"
               data-wow-delay="0.4s"
             >
-              <img :src="SimpleImg" alt="" class="img-fluid" />
+              <img
+                src="https://image.freepik.com/free-vector/contact-us-concept-landing-page_52683-12860.jpg"
+                alt=""
+                class="img-fluid"
+              />
             </div>
           </div>
           <div class="col-sm-12 col-md-6">

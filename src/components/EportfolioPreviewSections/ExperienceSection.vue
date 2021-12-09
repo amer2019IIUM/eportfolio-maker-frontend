@@ -26,7 +26,7 @@
               >
                 <div class="grid-item user-interface">
                   <figure>
-                    <h1>{{ item.job_title }}</h1>
+                    <h4>{{ item.job_title }}</h4>
                     <p>
                       {{ item.further_details }}
                     </p>
@@ -99,7 +99,8 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background-color: rgb(240, 240, 240);
+  background-color: #23d3b724;
+  border-radius: 1%;
 }
 .timeline {
   width: 80%;

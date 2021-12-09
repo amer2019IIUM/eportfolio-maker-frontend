@@ -5,7 +5,7 @@
            Projects
         ===================
         -->
-    <section class="mh-portfolio" id="mh-portfolio">
+    <section class="mh-portfolio secondSectionColor mt-3" id="mh-portfolio">
       <div class="container">
         <div class="row section-separator">
           <div
@@ -25,10 +25,10 @@
               <div class="portfolioContainer row">
                 <div
                   class="grid-item col-md-4 col-sm-6 col-xs-12 user-interface"
-                  v-for="(item, pIndex) in toBeShown"
+                  v-for="(project, pIndex) in toBeShown"
                   :key="pIndex"
                 >
-                  <b-modal :id="item.id" size="xl" :hide-footer="true">
+                  <b-modal :id="project.id" size="xl" :hide-footer="true">
                     <div id="mh">
                       <div class="container">
                         <div class="row">
@@ -47,56 +47,33 @@
                                 @sliding-start="onSlideStart"
                                 @sliding-end="onSlideEnd"
                               >
-                                <!-- Text slides with image -->
                                 <b-carousel-slide
-                                  img-src="https://picsum.photos/1024/480/?image=52"
+                                  v-for="(img, index) in project.attachments"
+                                  :key="index"
                                 >
-                                </b-carousel-slide>
-
-                                <!-- Slides with custom text -->
-                                <b-carousel-slide
-                                  img-src="https://picsum.photos/1024/480/?image=54"
-                                >
-                                </b-carousel-slide>
-
-                                <!-- Slides with image only -->
-                                <b-carousel-slide
-                                  img-src="https://picsum.photos/1024/480/?image=58"
-                                ></b-carousel-slide>
-
-                                <!-- Slides with img slot -->
-                                <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-                                <b-carousel-slide>
                                   <template #img>
                                     <img
                                       class="d-block img-fluid w-100"
                                       width="1024"
                                       height="480"
-                                      src="https://picsum.photos/1024/480/?image=55"
+                                      :src="img.link"
                                       alt="image slot"
                                     />
                                   </template>
-                                </b-carousel-slide>
-
-                                <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-                                <b-carousel-slide
-                                  img-blank
-                                  img-alt="Blank image"
-                                >
                                 </b-carousel-slide>
                               </b-carousel>
                             </div>
                           </div>
                           <div class="col-sm-5">
-                            <h2>{{ item.title }}</h2>
+                            <h2>{{ project.title }}</h2>
                             <p>
-                              {{ item.desc }}
+                              {{ project.desc }}
                             </p>
 
                             <div class="mh-about-tag">
                               <ul>
                                 <li
-                                  v-for="(tech, index) in item.technologies"
+                                  v-for="(tech, index) in project.technologies"
                                   :key="index"
                                 >
                                   <span>{{ tech.title }}</span>
@@ -104,7 +81,7 @@
                               </ul>
                             </div>
                             <a
-                              :href="item.source_code"
+                              :href="project.source_code"
                               class="btn btn-fill mr-1"
                               >Source</a
                             >
@@ -115,12 +92,16 @@
                     </div>
                   </b-modal>
                   <figure>
-                    <img :src="Img1" alt="img04" />
+                    <img :src="project.attachments[0].link" alt="img04" />
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
-                      <h5 class="title">{{ item.title }}</h5>
-                      <span class="sub-title"> {{ item.desc }}</span>
-                      <a data-fancybox data-src="#mh" v-b-modal="item.id"></a>
+                      <h5 class="title">{{ project.title }}</h5>
+                      <span class="sub-title"> {{ project.desc }}</span>
+                      <a
+                        data-fancybox
+                        data-src="#mh"
+                        v-b-modal="project.id"
+                      ></a>
                     </figcaption>
                   </figure>
                 </div>

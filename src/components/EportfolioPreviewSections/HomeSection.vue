@@ -4,7 +4,7 @@
             HOME 
         ===================
         -->
-  <section class="mh-home" id="mh-home">
+  <section class="mh-home app" id="mh-home">
     <div class="home-ovimg">
       <div class="container">
         <div
@@ -100,7 +100,13 @@
               data-wow-delay="0.6s"
             >
               <div class="img-border">
-                <img :src="SimpleImg" alt="" class="img-fluid" />
+                <img
+                  :src="profile.attachments[0].link"
+                  alt=""
+                  class="img-fluid"
+                  height="425px"
+                  width="425px"
+                />
               </div>
             </div>
           </div>

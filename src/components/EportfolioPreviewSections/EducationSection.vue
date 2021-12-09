@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mh-experince" id="mh-experience">
+    <section class="mh-experince secondSectionColor mb-5" id="mh-experience">
       <div class="bolor-overlay">
         <div>
           <div>
