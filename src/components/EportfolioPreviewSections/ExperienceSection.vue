@@ -32,20 +32,35 @@
                     </p>
                     <figcaption class="fig-caption">
                       <i class="fa fa-search"></i>
-                      <h5 class="title">Title here</h5>
+                      <h5 class="title">{{ item.job_title }}</h5>
 
-                      <span class="sub-title">20th may, 2010</span>
+                      <span class="sub-title">{{ item.to }}</span>
                       <a
                         data-fancybox
                         data-src="#mh"
-                        v-b-modal="`modal-${1}`"
+                        v-b-modal="item.id + 'experience'"
                       ></a>
                     </figcaption>
                   </figure>
 
                   <div>
-                    <b-modal :id="`modal-${1}`" size="lg" title="Large Modal">
-                      Hello Large Modal!
+                    <b-modal
+                      :id="item.id + 'experience'"
+                      :title="item.job_title"
+                      :hide-footer="true"
+                    >
+                      <div id="mh">
+                        <div class="row">
+                          <div class="col-12">
+                            <p>
+                              {{ item.further_details }}{{ item.further_details
+                              }}{{ item.further_details
+                              }}{{ item.further_details
+                              }}{{ item.further_details }}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </b-modal>
                   </div>
                 </div>
@@ -59,12 +74,14 @@
 </template>
 <script>
 import Img1 from "../../assets/images/portfolio/g1.jpg";
+import experienceImag from "../../assets/images/experience-modal.jpg";
 import { mapGetters } from "vuex";
 
 export default {
   data() {
     return {
       Img1,
+      experienceImag,
     };
   },
   computed: {
