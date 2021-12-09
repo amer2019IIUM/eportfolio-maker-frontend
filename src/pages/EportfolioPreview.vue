@@ -1,6 +1,15 @@
 <template>
   <div>
-    <div v-if="loadingQueries"></div>
+    <div v-if="loadingQueries">
+      <!-- Start Loader -->
+      <div class="section-loader">
+        <div class="loader">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <!-- End Loader -->
+    </div>
     <div v-else>
       <div class="white-vertion black-bg">
         <home-section />

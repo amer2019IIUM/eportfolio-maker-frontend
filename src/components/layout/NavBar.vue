@@ -10,6 +10,7 @@
           <nav class="navbar navbar-expand-lg mh-nav nav-btn">
             <a class="navbar-brand" href="#">
               <img :src="Logo" alt="" class="img-fluid" />
+              <!-- <h2>Maha</h2> -->
             </a>
             <button
               class="navbar-toggler"
@@ -25,7 +26,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-0 ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="#mh-home">Home</a>
                 </li>
                 <li class="nav-item">
@@ -40,7 +41,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#mh-portfolio">Portfolio</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link" href="#mh-pricing">Pricing</a>
                 </li>
                 <li class="nav-item">
@@ -48,7 +49,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#mh-contact">Contact</a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </nav>

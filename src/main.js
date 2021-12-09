@@ -8,9 +8,9 @@ import VueEllipseProgress from 'vue-ellipse-progress';
 Vue.use(VueEllipseProgress);
 
 ///JQuery Installation///
-// var $ = require('jquery');
-// window.jQuery = $;
-// window.$ = $;
+var $ = require('jquery');
+window.jQuery = $;
+window.$ = $;
 ///End Installation///
 
 
@@ -34,6 +34,8 @@ require('./assets/plugins/css/owl.css');
 require('./assets/plugins/css/animate.css');
 ///End of Global CSS style
 
+require('./assets/js/custom-scripts.js');
+// require('./assets/plugins/js/jquery.nav.js');
 
 new Vue({
   store,
